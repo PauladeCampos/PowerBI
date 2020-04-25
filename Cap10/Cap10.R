@@ -10,7 +10,7 @@
 
 # Definindo a pasta de trabalho
 getwd()
-setwd("D:/DSA/PowerBI-DataScience/Cap10")
+setwd("D:/OneDrive/Downloads/DSA/PowerBI/Cap10")
 
 #################### Pacotes do R ####################
 
@@ -20,7 +20,7 @@ install.packages("caret")
 install.packages("ggplot2")
 install.packages("dplyr")
 install.packages("reshape")
-install.packages("randomForest")
+install.packages("randomForest")  # pacote para construção de modelo preditivo (floresta aleatória)
 install.packages("e1071")
 
 # Carregando os pacotes 
@@ -83,7 +83,7 @@ colnames(dataset)
 
 # Verificando valores missing e removendo do dataset
 sapply(dataset, function(x) sum(is.na(x)))
-missmap(dataset, main = "Valores Missing Observados")
+missmap(dataset, main = "Valores Missing Observados") # pacote Amelia
 dataset <- na.omit(dataset)
 
 # Removendo a primeira coluna ID
@@ -91,15 +91,17 @@ dataset$ID <- NULL
 
 # Total de inadimplentes versus nao-inadimplentes
 table(dataset$inadimplente)
+prop.table(table(dataset$inadimplente))
 
 # Plot da distribuicao usando ggplot
-qplot(inadimplente, data = dataset, geom = "bar") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+qplot(inadimplente, data = dataset, geom = "bar") + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 # Set the seed
 set.seed(12345)
 
 # Amostragem estratificada. Selecione as linhas de acordo com a variable inadimplente como strata
-TrainingDataIndex <- createDataPartition(dataset$inadimplente, p = 0.45, list = FALSE)
+TrainingDataIndex <- createDataPartition(dataset$inadimplente, p = 0.70, list = FALSE)
 TrainingDataIndex
 
 # Criar Dados de Treinamento como subconjunto do conjunto de dados com numeros de indice de linha 
