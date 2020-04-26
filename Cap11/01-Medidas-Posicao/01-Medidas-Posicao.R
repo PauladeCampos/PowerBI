@@ -2,7 +2,7 @@
 
 # Definindo a pasta de trabalho
 # Substitua o caminho abaixo pela pasta no seu computador
-setwd("D:/Dropbox/DSA/PowerBI-DataScience/Cap11/01-Medidas-Posicao")
+##setwd("D:/Dropbox/DSA/PowerBI-DataScience/Cap11/01-Medidas-Posicao")
 getwd()
 
 # Carregando o dataset
@@ -44,9 +44,14 @@ print(result)
 install.packages("ggplot2")
 library(ggplot2)
 
-ggplot(vendas) + stat_summary(aes(x = vendas$Estado, y = vendas$Valor),
-                              fun.y = mean, geom = "bar", 
-                              fill = "lightgreen", col = "grey50")
+ggplot(vendas) +
+  stat_summary(
+    aes(x = vendas$Estado, y = vendas$Valor),
+    fun.y = mean,
+    geom = "bar",
+    fill = "lightblue",
+    col = "grey50"
+  )
 
 
 

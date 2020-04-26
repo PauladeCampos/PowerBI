@@ -28,3 +28,4 @@ IQR(carros$preco) # Diferença entre Q3 e Q1
 range(carros$preco)
 summary(carros$preco)
 diff(range(carros$preco))
+

@@ -2,7 +2,7 @@
 
 # Definindo a pasta de trabalho
 # Substitua o caminho abaixo pela pasta no seu computador
-setwd("D:/Dropbox/DSA/PowerBI-DataScience/Cap11/02-Medidas-Dispersao")
+setwd("D:/OneDrive/Downloads/DSA/PowerBI/Cap11/02-Medidas-Dispersao")
 getwd()
 
 # Carregando o dataset

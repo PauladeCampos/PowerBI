@@ -43,6 +43,7 @@ cvB
 
 
 # Exemplo 2 - Comparar as amostras de produtos fabricados
+# espessura de parafuso, quantidade de sal de biscoito.
 # Que medidas usar?
 # Variância
 var(amostras$AmostraA)
@@ -59,7 +60,7 @@ calculaModa <- function(v) {
 
 calculaModa(amostras$AmostraA)
 calculaModa(amostras$AmostraB)
-
+# a maioria das camisas estão com as medidas.
 
 # Exemplo 4 - Comparar as amostras das notas de alunos
 # Que medidas usar?
